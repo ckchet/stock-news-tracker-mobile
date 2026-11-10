@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Stock News Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Stock News Tracker</h1>
+    <div class="topbar-actions">
+      <button id="themeToggle" class="btn ghost" aria-label="สลับธีม">🌙</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <aside class="list-section card">
+      <div class="list-header">
+        <input id="searchInput" type="search" placeholder="ค้นหาหุ้น/ข่าว" />
+      </div>
+      <div class="filters">
+        <button class="chip active">ทั้งหมด</button>
+        <button class="chip">SET</button>
+        <button class="chip">NASDAQ</button>
+        <button class="chip">Crypto</button>
+      </div>
+      <div id="stockList" class="list"></div>
+    </aside>
+
+    <main class="main">
+      <section id="feed" class="feed" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <nav class="bottom-nav" aria-label="เมนูหลัก">
+    <button class="nav-item active">🏠<span>หน้าหลัก</span></button>
+    <button class="nav-item">📰<span>ข่าว</span></button>
+    <button class="nav-item">📋<span>งาน</span></button>
+    <button class="nav-item">📈<span>หุ้น</span></button>
+    <button class="nav-item">⭐<span>รายการ</span></button>
+    <button class="nav-item">🔔<span>แจ้งเตือน</span></button>
+    <button class="nav-item">👤<span>โปรไฟล์</span></button>
+  </nav>
+
+  <dialog id="detail" class="sheet">
+    <div class="sheet-handle"></div>
+    <h2 id="detail-title"></h2>
+    <p id="detail-body"></p>
+    <button class="close-btn" onclick="document.getElementById('detail').close()">ปิด</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
